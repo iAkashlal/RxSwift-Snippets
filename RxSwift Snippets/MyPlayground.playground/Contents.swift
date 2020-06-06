@@ -102,4 +102,9 @@ import RxCocoa
 //    print($0)
 //})
 
-
+//MARK:- Filters
+let observable6 = Observable.of(1,3,5,2,4,6, 7, 8)
+print("Without Ignore Elements")
+observable6.subscribe({ print($0) })
+print("With Ignore Elements")
+observable6.ignoreElements().subscribe({ print($0) })
