@@ -55,7 +55,7 @@ import RxCocoa
 ///PublishSubject
 //let publishSubject = PublishSubject<Int>()
 //
-//publishSubject.onNext(1)
+//publishSubject.onNext(0)
 //
 //publishSubject.subscribe ( onNext: { (element) in
 //    print(element)
@@ -103,8 +103,59 @@ import RxCocoa
 //})
 
 //MARK:- Filters
-let observable6 = Observable.of(1,3,5,2,4,6, 7, 8)
-print("Without Ignore Elements")
-observable6.subscribe({ print($0) })
-print("With Ignore Elements")
-observable6.ignoreElements().subscribe({ print($0) })
+
+///IgnoreElements
+//let observable6 = Observable.of(1,3,5,2,4,6, 7, 8)
+//print("Without Ignore Elements")
+//observable6.subscribe({ print($0) })
+//print("With Ignore Elements")
+//observable6.ignoreElements().subscribe({ print($0) })
+
+///Element At
+//observable6.elementAt(0).subscribe(onNext: { print($0) })
+
+///Filter
+//observable6.filter({ $0 > 3}).subscribe(onNext: { print($0) })
+
+///Skip
+//observable6.skip(2).subscribe(onNext: { print($0) })
+
+///Skip While
+//observable6.skipWhile({ $0 < 5 }).subscribe(onNext: { print($0) })
+
+///Skip Until
+//let publishSubject2 = PublishSubject<Int>()
+//let triggerSubject = PublishSubject<Int>()
+//
+//publishSubject2.skipUntil(triggerSubject).subscribe ( onNext: { (element) in
+//    print(element)
+//})
+//publishSubject2.onNext(0)
+//publishSubject2.onNext(1)
+//
+//triggerSubject.onNext(0)
+//
+//publishSubject2.onNext(2)
+//publishSubject2.onNext(3)
+
+
+///Take
+//observable6.take(2).subscribe(onNext: { print($0) })
+
+///Take While
+//observable6.takeWhile({ $0 < 5 }).subscribe(onNext: { print($0) })
+
+///Take Until
+//let publishSubject2 = PublishSubject<Int>()
+//let triggerSubject = PublishSubject<Int>()
+//
+//publishSubject2.takeUntil(triggerSubject).subscribe ( onNext: { (element) in
+//    print(element)
+//})
+//publishSubject2.onNext(0)
+//publishSubject2.onNext(1)
+//
+//triggerSubject.onNext(0)
+//
+//publishSubject2.onNext(2)
+//publishSubject2.onNext(3)
