@@ -159,3 +159,72 @@ import RxCocoa
 //
 //publishSubject2.onNext(2)
 //publishSubject2.onNext(3)
+//
+///To Array
+//let observable6 = Observable.of(1,2,3,4,5,6)
+//observable6.toArray().subscribe(onNext: {print($0)})
+
+///Map
+//let observable6 = Observable.of(1,2,3,4,5,6)
+//observable6.map({$0*2}).subscribe(onNext: {print($0)})
+
+///FlatMap
+//struct Pet{
+//    var name: BehaviorRelay<String>
+//}
+//let tom = Pet(name: BehaviorRelay(value: "Tom"))
+//let jerry = Pet(name: BehaviorRelay(value: "Jerry"))
+//
+//let pet = PublishSubject<Pet>()
+//
+//pet.asObservable().flatMap { $0.name.asObservable() }.subscribe(onNext:{ print($0)})
+//
+//
+//pet.onNext(tom)
+//tom.name.accept("Tommy")
+//
+//pet.onNext(jerry)
+//jerry.name.accept("Jer")
+//
+//tom.name.accept("Tom")
+
+///FlatMapLatest
+//struct Pet{
+//    var name: BehaviorRelay<String>
+//}
+//let tom = Pet(name: BehaviorRelay(value: "Tom"))
+//let jerry = Pet(name: BehaviorRelay(value: "Jerry"))
+//
+//let pet = PublishSubject<Pet>()
+//
+//pet.asObservable().flatMapLatest { $0.name.asObservable() }.subscribe(onNext:{ print($0)})
+//
+//
+//pet.onNext(tom)
+//tom.name.accept("Tommy")
+//
+//pet.onNext(jerry)
+//jerry.name.accept("Jer")
+//
+//tom.name.accept("Tom")
+
+///FlatMapFirst
+//struct Pet{
+//    var name: BehaviorRelay<String>
+//}
+//let tom = Pet(name: BehaviorRelay(value: "Tom"))
+//let jerry = Pet(name: BehaviorRelay(value: "Jerry"))
+//
+//let pet = PublishSubject<Pet>()
+//
+//pet.asObservable().flatMapFirst { $0.name.asObservable() }.subscribe(onNext:{ print($0)})
+//
+//
+//pet.onNext(tom)
+//tom.name.accept("Tommy")
+//
+//pet.onNext(jerry)
+//jerry.name.accept("Jer")
+//
+//tom.name.accept("Tom")
+
